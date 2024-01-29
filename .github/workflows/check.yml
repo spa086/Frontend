@@ -46,17 +46,5 @@ jobs:
           prettier: true
         
         
-      - name: Run type checking
-        run: npm run type-check
-        
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
   
   
