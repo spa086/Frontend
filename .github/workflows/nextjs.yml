@@ -36,8 +36,11 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
         
-      - name: run linting
-        run: npm run lint
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
         
       - name: Restore cache
         uses: actions/cache@v3
